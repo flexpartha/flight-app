@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Flight, FlightDataService } from '@flight-app/flight-data';
-import { Observable, map, switchMap } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'flight-app-flight-detail',
