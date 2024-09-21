@@ -1,0 +1,8 @@
+<h1>Flight Details</h1>
+
+<div *ngFor="let flightdata of flightDetails$ | async; let i = index;" style="display: block; width: 250px; border: 1px solid hsl(0, 0%, 94%);">
+    <span>FLIGHT ID::--</span><span>{{flightdata.id}}</span><br/>
+    <span>FROM::--</span><span>{{flightdata.from}}</span><br/>
+    <span>TO::--</span><span>{{flightdata.to}}</span><br/>
+    <span>DATE::--</span><span>{{flightdata.date | date}}</span><br/>
+</div>

@@ -1,0 +1,47 @@
+{
+  "name": "flight-detail",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "flight-detail/src",
+  "prefix": "flight-app",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "flight-detail/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "flight-detail/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "flight-detail/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "flight-detail/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["flight-detail/**/*.ts", "flight-detail/**/*.html"]
+      }
+    }
+  }
+}
